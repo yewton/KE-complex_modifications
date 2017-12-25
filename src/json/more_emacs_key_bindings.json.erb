@@ -210,6 +210,12 @@
                 },
                 {
                     "type": "basic",
+                    "from": <%= from('s', %w(control), ['caps_lock', 'shift', 'option']) %>,
+                    "to": <%= to([['f', %w(left_command)]]) %>,
+                    "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
+                },
+                {
+                    "type": "basic",
                     "from": <%= from('slash', %w(control), []) %>,
                     "to": <%= to([['z', %w(left_command)]]) %>,
                     "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
