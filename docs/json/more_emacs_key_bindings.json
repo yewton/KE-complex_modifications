@@ -1451,7 +1451,7 @@
             "key_code": "v",
             "modifiers": {
               "mandatory": [
-                "option"
+                "command"
               ]
             }
           },

@@ -216,7 +216,7 @@
                 },
                 {
                     "type": "basic",
-                    "from": <%= from('v', ['option'], []) %>,
+                    "from": <%= from('v', ['command'], []) %>,
                     "to": <%= to([['page_up']]) %>,
                     "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
                 },
