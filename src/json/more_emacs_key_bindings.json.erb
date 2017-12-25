@@ -91,14 +91,26 @@
                 },
                 {
                     "type": "basic",
-                    "from": <%= from('b', %w(control), %w(caps_lock shift option)) %>,
+                    "from": <%= from('b', %w(control), %w(caps_lock shift)) %>,
                     "to": <%= to([['left_arrow']]) %>,
                     "conditions": [ <%= frontmost_application_unless("emacs_key_bindings_exception") %> ]
                 },
                 {
                     "type": "basic",
-                    "from": <%= from('f', %w(control), %w(caps_lock shift option)) %>,
+                    "from": <%= from('b', %w(command), %w(caps_lock shift)) %>,
+                    "to": <%= to([['left_arrow', %(left_option)]]) %>,
+                    "conditions": [ <%= frontmost_application_unless("emacs_key_bindings_exception") %> ]
+                },
+                {
+                    "type": "basic",
+                    "from": <%= from('f', %w(control), %w(caps_lock shift)) %>,
                     "to": <%= to([['right_arrow']]) %>,
+                    "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
+                },
+                {
+                    "type": "basic",
+                    "from": <%= from('f', %w(command), %w(caps_lock shift)) %>,
+                    "to": <%= to([['right_arrow', %(left_option)]]) %>,
                     "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
                 },
                 {
@@ -135,6 +147,12 @@
                     "type": "basic",
                     "from": <%= from('d', %w(control), %w(caps_lock option)) %>,
                     "to": <%= to([['delete_forward']]) %>,
+                    "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
+                },
+                {
+                    "type": "basic",
+                    "from": <%= from('d', %w(command), %w(caps_lock option)) %>,
+                    "to": <%= to([['right_arrow', %w(left_option left_shift)], ['x', %w(left_command)]]) %>,
                     "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
                 },
                 {
