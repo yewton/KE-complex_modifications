@@ -241,13 +241,13 @@
                 {
                     "type": "basic",
                     "from": <%= from('comma', ['command', 'shift'], []) %>,
-                    "to": <%= to([['home', %w(left_command)]]) %>,
+                    "to": <%= to([['home']]) %>,
                     "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
                 },
                 {
                     "type": "basic",
                     "from": <%= from('period', ['command', 'shift'], []) %>,
-                    "to": <%= to([['end', %w(left_command)]]) %>,
+                    "to": <%= to([['end']]) %>,
                     "conditions": [ <%= frontmost_application_unless('emacs_key_bindings_exception') %> ]
                 }
             ]
